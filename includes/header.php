@@ -24,8 +24,10 @@ $name = $_SESSION['name'] ?? '';
             data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav me-auto">
+
         <li class="nav-item">
           <a class="nav-link" href="/WebProE2300582/courses.php">
             <i class="bi bi-grid me-1"></i>Browse Courses
@@ -34,7 +36,8 @@ $name = $_SESSION['name'] ?? '';
 
         <?php if ($role === 'provider'): ?>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#"
+             data-bs-toggle="dropdown">
             <i class="bi bi-building me-1"></i>Provider
           </a>
           <ul class="dropdown-menu">
@@ -56,5 +59,76 @@ $name = $_SESSION['name'] ?? '';
 
         <?php if ($role === 'officer'): ?>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-shield-check me-1
+          <a class="nav-link dropdown-toggle" href="#"
+             data-bs-toggle="dropdown">
+            <i class="bi bi-shield-check me-1"></i>Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item"
+                 href="/WebProE2300582/admin/registrations.php">
+                <i class="bi bi-person-check me-2"></i>Registrations
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"
+                 href="/WebProE2300582/admin/reports.php">
+                <i class="bi bi-graph-up me-2"></i>Analytics
+              </a>
+            </li>
+          </ul>
+        </li>
+        <?php endif; ?>
+
+        <?php if ($role === 'learner'): ?>
+        <li class="nav-item">
+          <a class="nav-link" href="/WebProE2300582/review.php">
+            <i class="bi bi-star me-1"></i>My Reviews
+          </a>
+        </li>
+        <?php endif; ?>
+
+      </ul>
+
+      <ul class="navbar-nav ms-auto align-items-center">
+        <?php if ($name): ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center gap-2"
+             href="#" data-bs-toggle="dropdown">
+            <div class="ems-avatar">
+              <?= strtoupper(substr($name, 0, 1)) ?>
+            </div>
+            <span><?= htmlspecialchars($name) ?></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <span class="dropdown-item-text text-muted small">
+                <?= ucfirst($role) ?>
+              </span>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item text-danger"
+                 href="/WebProE2300582/logout.php">
+                <i class="bi bi-box-arrow-right me-2"></i>Logout
+              </a>
+            </li>
+          </ul>
+        </li>
+        <?php else: ?>
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/WebProE2300582/login.php">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-warning btn-sm ms-2 fw-bold"
+             href="/WebProE2300582/register.php">
+            Register as Provider
+          </a>
+        </li>
+        <?php endif; ?>
+      </ul>
+
+    </div>
+  </div>
+</nav>
