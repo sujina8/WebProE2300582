@@ -1,0 +1,205 @@
+/* =============================================
+   main.css — Global Styles for EduSkill EMS
+   BIT210 Project
+   ============================================= */
+
+:root {
+  --ems-primary: #1a73e8;
+  --ems-dark:    #0d47a1;
+  --ems-accent:  #f9ab00;
+  --ems-light:   #e8f0fe;
+  --ems-bg:      #f8f9fa;
+  --ems-text:    #202124;
+  --ems-muted:   #5f6368;
+}
+
+/* ── Body ───────────────────────────────────── */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--ems-bg);
+  color: var(--ems-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ─────────────────────────────────── */
+.ems-navbar {
+  background: linear-gradient(135deg, #0d47a1 0%, #1a73e8 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.ems-navbar .nav-link:hover {
+  color: #f9ab00 !important;
+}
+.ems-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ems-accent);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Hero ───────────────────────────────────── */
+.ems-hero {
+  background: linear-gradient(135deg, #0d47a1 0%, #1a73e8 100%);
+  color: white;
+  padding: 80px 0 60px;
+}
+.ems-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+/* ── Cards ──────────────────────────────────── */
+.ems-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ems-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.ems-card .card-header {
+  background: var(--ems-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: 12px 12px 0 0 !important;
+  border: none;
+  padding: 1rem 1.25rem;
+}
+
+/* ── Course Card ────────────────────────────── */
+.course-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  transition: all 0.2s;
+  height: 100%;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+.course-badge {
+  background: var(--ems-light);
+  color: var(--ems-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.price-tag {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ems-primary);
+}
+
+/* ── Page Header ────────────────────────────── */
+.page-header {
+  background: white;
+  border-bottom: 3px solid var(--ems-primary);
+  padding: 28px 0 20px;
+  margin-bottom: 30px;
+}
+.page-header h2 {
+  font-weight: 700;
+  color: var(--ems-dark);
+  margin: 0;
+}
+.page-header p {
+  color: var(--ems-muted);
+  margin: 4px 0 0;
+}
+
+/* ── Stat Card ──────────────────────────────── */
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  border-left: 5px solid var(--ems-primary);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.stat-card .stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ems-primary);
+}
+.stat-card .stat-label {
+  color: var(--ems-muted);
+  font-size: 0.9rem;
+}
+.stat-card.success { border-left-color: #1e8449; }
+.stat-card.success .stat-number { color: #1e8449; }
+.stat-card.warning { border-left-color: #e65100; }
+.stat-card.warning .stat-number { color: #e65100; }
+
+/* ── Buttons ────────────────────────────────── */
+.btn-ems {
+  background: var(--ems-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-ems:hover {
+  background: var(--ems-dark);
+  color: white;
+}
+
+/* ── Forms ──────────────────────────────────── */
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1.5px solid #dee2e6;
+  padding: 10px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--ems-primary);
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+}
+.form-label {
+  font-weight: 600;
+  color: var(--ems-text);
+  margin-bottom: 5px;
+}
+
+/* ── Tables ─────────────────────────────────── */
+.ems-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.ems-table thead th {
+  background: var(--ems-primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 14px 16px;
+}
+.ems-table tbody tr:hover { background: var(--ems-light); }
+.ems-table td {
+  padding: 13px 16px;
+  vertical-align: middle;
+}
+
+/* ── Footer ─────────────────────────────────── */
+.ems-footer {
+  background: linear-gradient(135deg, #0d47a1 0%, #1a73e8 100%);
+  padding: 40px 0 20px;
+  margin-top: auto;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  .ems-hero h1 { font-size: 2rem; }
+}
